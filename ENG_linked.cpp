@@ -101,7 +101,7 @@ void display(Node* start)
     cout << "Traversal in forward direction:" << endl; 
     while (temp->next != start) 
     { 
-        cout << temp->data << " ";
+        cout << temp->data << endl;
         temp = temp->next; 
     } 
     cout << temp->data << endl; 
@@ -113,33 +113,54 @@ void display(Node* start)
     temp = last; 
     while (temp->prev != last) 
     { 
-        cout << temp->data << " "; 
+        cout << temp->data << endl; 
         temp = temp->prev; 
     } 
     cout << temp->data << endl; 
 } 
+
+
+bool search(Node** start, string value) 
+{ 
+
+    Node *temp = *start;
+    Node *last = (*start)->prev; 
+    Node *temp2 = last;
+
+    temp2->next = NULL;
+
+    cout << "Searching for: " << value << endl;
+
+    while(temp->next != NULL)
+    {
+        if((temp->data).find(value) != string::npos)
+        {
+            cout << temp->data << endl;
+            break;
+        }
+        else
+        {
+            cout << "Search returned no results." << endl;
+            temp = temp->next;  // interate through the inputted list
+        }
+    }
+} 
+
   
 int main() 
 { 
     /* Initialize empty list */
     Node* start = NULL; 
+
+    insertEnd(&start, "CAS, PY212, SI II, QR II, CT, T/C"); 
   
-    // Insert College. Linked list becomes CAS->NULL 
-   insertEnd(&start, "CAS"); 
-  
-    // Insert Course. Linked list becomes CAS->PY212
-    insertEnd(&start, "PY212"); 
-  
-    // Insert Hub credits at the end. Linked list becomes CAS->PY212->SI II, QR II, CT, T/C
-   insertEnd(&start, "4"); 
-  
-    // Insert GPA at the end. Linked list becomes CAS->PY212->SI II, QR II, CT, T/C->3.0 
-   insertEnd(&start, "SI II, QR II, CT, T/C"); 
-  
-    // Insert Credit hours, after College. Linked List becomes CAS->PY212->4->SI II, QR II, CT, T/C->3.0
+    insertEnd(&start, "CAS, PY211, SI I, QR I, CT, T/C"); 
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
     display(start); 
+
+    
+    search(&start,"CAS");
   
     return 0; 
 } 
