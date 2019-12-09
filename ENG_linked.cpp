@@ -124,21 +124,20 @@ int main()
     /* Initialize empty list */
     Node* start = NULL; 
   
-    // Insert course name. Linked list becomes PY212->NULL 
-   // insertEnd(&start, "PY212"); 
+    // Insert College. Linked list becomes CAS->NULL 
+   insertEnd(&start, "CAS"); 
   
-    // Insert College at the beginning. Linked list becomes CAS->PY212
-    insertBegin(&start, "CAS"); 
+    // Insert Course. Linked list becomes CAS->PY212
+    insertEnd(&start, "PY212"); 
   
     // Insert Hub credits at the end. Linked list becomes CAS->PY212->SI II, QR II, CT, T/C
-   // insertEnd(&start, "SI II, QR II, CT, T/C"); 
+   insertEnd(&start, "4"); 
   
     // Insert GPA at the end. Linked list becomes CAS->PY212->SI II, QR II, CT, T/C->3.0 
-   // insertEnd(&start, "3.0"); 
+   insertEnd(&start, "SI II, QR II, CT, T/C"); 
   
     // Insert Credit hours, after College. Linked List becomes CAS->PY212->4->SI II, QR II, CT, T/C->3.0
-   // insertAfter(&start, "", "PY212"); 
-  
+   
     cout << "Circular doubly linked list & its elements constructed." << endl; 
     display(start); 
   
