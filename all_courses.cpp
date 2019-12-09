@@ -125,21 +125,19 @@ bool search(Node** start, string value)
 
     Node *temp = *start;
     Node *last = (*start)->prev; 
-    Node *temp2 = last;
-
-    temp2->next = NULL;
 
     cout << "Searching for: " << value << endl;
 
     while(temp->next != NULL)
     {
-        if((temp->data).find(value) != string::npos)
+        if(temp->data.find(value) != string::npos)
         {
             cout << temp->data << endl;
             break;
         }
         temp = temp->next;  // interate until NULL if value doesnt match
     }
+    
     if(temp->next == NULL)
     {
         cout << "Search returned no results." << endl;
@@ -158,9 +156,8 @@ int main()
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
     display(start); 
-
     
-    search(&start,"hot");
+    search(&start,"PY211");
   
     return 0; 
 } 
