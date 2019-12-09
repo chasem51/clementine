@@ -138,11 +138,11 @@ bool search(Node** start, string value)
             cout << temp->data << endl;
             break;
         }
-        else
-        {
-            cout << "Search returned no results." << endl;
-            temp = temp->next;  // interate through the inputted list
-        }
+        temp = temp->next;  // interate until NULL if value doesnt match
+    }
+    if(temp->next == NULL)
+    {
+        cout << "Search returned no results." << endl;
     }
 } 
 
@@ -160,7 +160,7 @@ int main()
     display(start); 
 
     
-    search(&start,"CAS");
+    search(&start,"hot");
   
     return 0; 
 } 
