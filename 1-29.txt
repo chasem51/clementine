@@ -1,5 +1,0 @@
-1.print a major and required courses
-
-2.user override
-
-allow search/clearing of non-major requirement courses
