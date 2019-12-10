@@ -123,24 +123,32 @@ void display(Node* start)
 bool search(Node** start, string value) 
 { 
 
-    Node *temp = *start;
-    Node *last = (*start)->prev; 
+    // Node *temp = start;
+     Node *last = (*start)->prev; 
+     Node *temp = last->next;
+    
+    //temp2->next = NULL;
+    //temp2->next->data = NULL;
 
     cout << "Searching for: " << value << endl;
 
-    while(temp->next != NULL)
+    while(temp != NULL)
     {
         if(temp->data.find(value) != string::npos)
         {
             cout << temp->data << endl;
-            break;
+            if(temp == last)
+            {
+                return 0;
+            }
         }
-        temp = temp->next;  // interate until NULL if value doesnt match
-    }
-    
-    if(temp->next == NULL)
-    {
-        cout << "Search returned no results." << endl;
+        else if(temp == last && temp->data.find(value) == string::npos)
+        {
+            temp = NULL;
+            cout << "Search returned no results." << endl;
+            return 0;
+        }
+        temp = temp->next;  // interate until last if value doesnt match
     }
 } 
 
@@ -150,14 +158,14 @@ int main()
     /* Initialize empty list */
     Node* start = NULL; 
 
-    insertEnd(&start, "CAS, PY212, SI II, QR II, CT, T/C"); 
+    insertEnd(&start, "CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
   
-    insertEnd(&start, "CAS, PY211, SI I, QR I, CT, T/C"); 
+    insertEnd(&start, "CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
     display(start); 
     
-    search(&start,"PY211");
+    search(&start,"SI I");
   
     return 0; 
 } 
