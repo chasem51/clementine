@@ -96,7 +96,6 @@ void display(Node* head)
 // finds results matching an input value from start, store in second linked list
 bool search(Node** head, string value) 
 { 
-
     // Node *temp = head;
      Node *last = (*head)->prev; 
      Node *temp = last->next;
@@ -108,7 +107,7 @@ bool search(Node** head, string value)
 
     while(temp != NULL)
     {
-        if(temp->data.find(value) != string::npos)
+        if(temp->data.find(value) != string::npos) // if temp -> data is equal to the value
         {
             cout << temp->data << endl;
             if(temp == last)
@@ -116,7 +115,7 @@ bool search(Node** head, string value)
                 return 0;
             }
         }
-        else if(temp == last && temp->data.find(value) == string::npos)
+        else if(temp == last && temp->data.find(value) == string::npos) // if temp -> next is equal to start and temp -> data isn't equal to the value, search concluded
         {
             temp = NULL;
             cout << "Search returned no results." << endl;
