@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <iomanip>
 #include <cstdio>
 using namespace std; 
   
@@ -14,92 +12,68 @@ class Node
     Node *prev; 
 }; 
   
-// Function to insert at the end 
-void insertEnd(Node** start, string value) 
+// insert new_node at the end of the linked list
+void insertEnd(Node** head, string value) 
 { 
     // If the list is empty, create a single node 
-    if (*start == NULL) 
+    if (*head == NULL) 
     { 
         Node* new_node = new Node; 
         new_node->data = value; 
         new_node->next = new_node->prev = new_node; 
-        *start = new_node; 
+        *head = new_node; 
         return; 
     } 
   
     // If list is not empty 
+    Node *last = (*head)->prev; 
   
-    /* Find last node */
-    Node *last = (*start)->prev; 
-  
-    // Create Node dynamically 
+    // Create Node
     Node* new_node = new Node; 
     new_node->data = value; 
   
-    // Start is going to be next of new_node 
-    new_node->next = *start; 
+    // new_node -> next points to head 
+    new_node->next = *head; 
   
-    // Make new node previous of start 
-    (*start)->prev = new_node; 
+    // head -> prev points to new_node for doubly linked insertion 
+    (*head)->prev = new_node; 
   
-    // Make last preivous of new node 
+    // Make last previous of new node 
     new_node->prev = last; 
   
     // Make new node next of old last 
     last->next = new_node; 
 } 
   
-// Function to insert Node at the beginning of the List, 
-void insertBegin(Node** start, string value) 
+// insert new_node at the beginning of the linked list
+void insertBegin(Node** head, string value) 
 { 
     // Pointer points to last Node 
-    Node *last = (*start)->prev; 
+    Node *last = (*head)->prev; 
   
+   // create node
     Node* new_node = new Node; 
-    new_node->data = value;   // Inserting the data 
+    new_node->data = value;
   
-    // setting up previous and next of new node 
-    new_node->next = *start; 
+    // inserts new_node so its doubly linked
+    new_node->next = *head; 
     new_node->prev = last; 
   
-    // Update next and previous pointers of start 
-    // and last. 
-    last->next = (*start)->prev = new_node; 
+    // Update ptrs next and last
+    last->next = (*head)->prev = new_node; 
   
-    // Update start pointer 
-    *start = new_node; 
-} 
+    // Update head pointer 
+    *head = new_node; 
+}   
   
-// Function to insert node with value as value1. 
-// The new node is inserted after the node with 
-// with value2 
-void insertAfter(Node** start, string value1, string value2) 
+void display(Node* head) 
 { 
-    Node* new_node = new Node; 
-    new_node->data = value1; // Inserting the data 
-  
-    // Find node having value2 and next node of it 
-    Node *temp = *start; 
-    while (temp->data != value2) 
-        temp = temp->next; 
-    Node *next = temp->next; 
-  
-    // insert new_node between temp and next. 
-    temp->next = new_node; 
-    new_node->prev = temp; 
-    new_node->next = next; 
-    next->prev = new_node; 
-} 
-  
-  
-void display(Node* start) 
-{ 
-    Node *temp = start; 
+    Node *temp = head; 
   
     // forward iterative print
     cout << "College of ENG elements~" << endl;
     cout << "Traversal in forward direction:" << endl; 
-    while (temp->next != start) 
+    while (temp->next != head) 
     { 
         cout << temp->data << endl;
         temp = temp->next; 
@@ -109,7 +83,7 @@ void display(Node* start)
     // backward iterative print
     cout << "College of ENG elements~" << endl;
     cout << "Traversal in reverse direction:" << endl; 
-    Node *last = start->prev; 
+    Node *last = head->prev; 
     temp = last; 
     while (temp->prev != last) 
     { 
@@ -119,12 +93,12 @@ void display(Node* start)
     cout << temp->data << endl; 
 } 
 
-
-bool search(Node** start, string value) 
+// finds results matching an input value from start, store in second linked list
+bool search(Node** head, string value) 
 { 
 
-    // Node *temp = start;
-     Node *last = (*start)->prev; 
+    // Node *temp = head;
+     Node *last = (*head)->prev; 
      Node *temp = last->next;
     
     //temp2->next = NULL;
@@ -148,7 +122,7 @@ bool search(Node** start, string value)
             cout << "Search returned no results." << endl;
             return 0;
         }
-        temp = temp->next;  // interate until last if value doesnt match
+        temp = temp->next;  // iterate until value search is resolved
     }
 } 
 
