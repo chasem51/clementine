@@ -71,7 +71,6 @@ void display(Node* head)
     Node *temp = head; 
   
     // forward iterative print
-    cout << "College of ENG elements~" << endl;
     cout << "Traversal in forward direction:" << endl; 
     while (temp->next != head) 
     { 
@@ -81,7 +80,6 @@ void display(Node* head)
     cout << temp->data << endl; 
   
     // backward iterative print
-    cout << "College of ENG elements~" << endl;
     cout << "Traversal in reverse direction:" << endl; 
     Node *last = head->prev; 
     temp = last; 
@@ -126,6 +124,7 @@ bool search(Node **head, Node **head2, string value)
             if(temp == last)
             {  
                 display(temp2);
+                cout << "Skipped list containing searched value: " << value << " constructed." << endl;
                 return 0;
             }
         }
@@ -155,7 +154,7 @@ int main()
     cout << "Circular doubly linked list & its elements constructed." << endl; 
     //display(start); 
     
-    search(&start,&start2, "Quantitiative Reasererfoning");
+    search(&start,&start2, "Quantitiative Reasoning");
 
    // display(start2);
   
