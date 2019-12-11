@@ -9,7 +9,7 @@ class Node
     public:
     string data; 
     Node *next; 
-    Node *prev; 
+    Node *prev;
 }; 
   
 // insert new_node at the end of the linked list
@@ -29,7 +29,7 @@ void insertEnd(Node** head, string value)
     Node *last = (*head)->prev; 
   
     // Create Node
-    Node* new_node = new Node; 
+    Node *new_node = new Node; 
     new_node->data = value; 
   
     // new_node -> next points to head 
@@ -52,7 +52,7 @@ void insertBegin(Node** head, string value)
     Node *last = (*head)->prev; 
   
    // create node
-    Node* new_node = new Node; 
+    Node *new_node = new Node; 
     new_node->data = value;
   
     // inserts new_node so its doubly linked
@@ -93,12 +93,22 @@ void display(Node* head)
     cout << temp->data << endl; 
 } 
 
-// finds results matching an input value from start, store in second linked list
-bool search(Node** head, string value) 
+// finds results matching an input value from start, store in second linked list start2
+bool search(Node **head, Node **head2, string value) 
 { 
     // Node *temp = head;
-     Node *last = (*head)->prev; 
-     Node *temp = last->next;
+    Node *last = (*head)->prev; 
+    Node *temp = last->next;
+     
+    Node *temp2 = *head2;
+    Node *last2 = temp2;
+    //Node *begin = last2->next;
+    //Node last2 = (*temp2)->next;
+    //Node *temp3 = last2->next;
+   // Node *temp2 = start2;
+
+     //(*temp2)->data = temp->data;
+    // Node *temp2 = last2->next;
     
     //temp2->next = NULL;
     //temp2->next->data = NULL;
@@ -110,8 +120,12 @@ bool search(Node** head, string value)
         if(temp->data.find(value) != string::npos) // if temp -> data is equal to the value
         {
             cout << temp->data << endl;
+
+            insertEnd(&temp2, temp->data);
+            
             if(temp == last)
-            {
+            {  
+                display(temp2);
                 return 0;
             }
         }
@@ -129,16 +143,21 @@ bool search(Node** head, string value)
 int main() 
 { 
     /* Initialize empty list */
-    Node* start = NULL; 
+    Node *start = NULL; 
+    
+    /* Initialize second list */
+    Node *start2 = NULL;
 
     insertEnd(&start, "CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
   
     insertEnd(&start, "CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
-    display(start); 
+    //display(start); 
     
-    search(&start,"SI I");
+    search(&start,&start2, "Quantitiative Reasererfoning");
+
+   // display(start2);
   
     return 0; 
 } 
