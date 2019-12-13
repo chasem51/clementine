@@ -1,52 +1,58 @@
+#include "allcourses.h"
 #include <iostream>
-#include <string>
-#include <cstdio>
+
 using namespace std; 
-  
-// Structure of a Node 
-class Node 
-{ 
-    public:
-    string data; 
-    Node *next; 
-    Node *prev;
-}; 
-  
+ 
+
+LinkedList :: LinkedList()
+{
+    this->length = 0;
+    this->head = NULL;
+}
+
+LinkedList :: ~LinkedList()
+{
+    cout << "LIST DELETED." << endl;
+}
+
 // insert new_node at the end of the linked list
-void insertEnd(Node** head, string value) 
+void LinkedList::insertEnd(string value) 
 { 
     // If the list is empty, create a single node 
-    if (*head == NULL) 
+    if (this->head == NULL) 
     { 
-        Node* new_node = new Node; 
+        Node* new_node = new Node(); 
         new_node->data = value; 
-        new_node->next = new_node->prev = new_node; 
-        *head = new_node; 
+        new_node->next = new_node->prev = this->head; 
+        this->head = new_node; 
+        this->length++; 
         return; 
     } 
   
     // If list is not empty 
-    Node *last = (*head)->prev; 
+    Node *last = head->prev; 
   
     // Create Node
-    Node *new_node = new Node; 
+    Node *new_node = new Node(); 
     new_node->data = value; 
   
     // new_node -> next points to head 
-    new_node->next = *head; 
+    new_node->next = this->head; 
   
     // head -> prev points to new_node for doubly linked insertion 
-    (*head)->prev = new_node; 
+    this->head = new_node; 
   
     // Make last previous of new node 
-    new_node->prev = last; 
+   // new_node->prev = last; 
   
     // Make new node next of old last 
-    last->next = new_node; 
+    //new_node = last->next; 
+
+    this->length++;
 } 
-  
+  /*
 // insert new_node at the beginning of the linked list
-void insertBegin(Node** head, string value) 
+void LinkedList::insertBegin(string value) 
 { 
     // Pointer points to last Node 
     Node *last = (*head)->prev; 
@@ -64,52 +70,47 @@ void insertBegin(Node** head, string value)
   
     // Update head pointer 
     *head = new_node; 
+
+
 }   
-  
-void display(Node* head) 
+  */
+void LinkedList::display() 
 { 
-    Node *temp = head; 
+    Node *head = this->head; 
   
     // forward iterative print
     cout << "Traversal in forward direction:" << endl; 
-    while (temp->next != head) 
+    while (head) 
     { 
-        cout << temp->data << endl;
-        temp = temp->next; 
+        cout << head->data << endl;
+        head = head->next; 
     } 
-    cout << temp->data << endl; 
+   // cout << head->data << endl; 
   
+  /*
     // backward iterative print
     cout << "Traversal in reverse direction:" << endl; 
     Node *last = head->prev; 
-    temp = last; 
-    while (temp->prev != last) 
+    head = last; 
+    while (last) 
     { 
-        cout << temp->data << endl; 
-        temp = temp->prev; 
+        cout << head->data << endl; 
+        head = head->prev; 
     } 
-    cout << temp->data << endl; 
+    cout << head->data << endl; 
+    */
 } 
 
-// finds results matching an input value from start, store in second linked list start2
-bool search(Node **head, Node **head2, string value) 
+/*
+
+// finds results matching an input value from start, store in second 'skipped' list start2
+bool LinkedList::search(string value) 
 { 
     // Node *temp = head;
     Node *last = (*head)->prev; 
     Node *temp = last->next;
      
     Node *temp2 = *head2;
-    Node *last2 = temp2;
-    //Node *begin = last2->next;
-    //Node last2 = (*temp2)->next;
-    //Node *temp3 = last2->next;
-   // Node *temp2 = start2;
-
-     //(*temp2)->data = temp->data;
-    // Node *temp2 = last2->next;
-    
-    //temp2->next = NULL;
-    //temp2->next->data = NULL;
 
     cout << "Searching for: " << value << endl;
 
@@ -119,11 +120,11 @@ bool search(Node **head, Node **head2, string value)
         {
             cout << temp->data << endl;
 
-            insertEnd(&temp2, temp->data);
+            void Node::insertEnd(&temp2, temp->data);
             
             if(temp == last)
             {  
-                display(temp2);
+                void Node::display(temp2);
                 cout << "Skipped list containing searched value: " << value << " constructed." << endl;
                 return 0;
             }
@@ -137,26 +138,31 @@ bool search(Node **head, Node **head2, string value)
         temp = temp->next;  // iterate until value search is resolved
     }
 } 
+*/
 
   
 int main() 
 { 
     /* Initialize empty list */
-    Node *start = NULL; 
+    LinkedList* list = new LinkedList();
     
     /* Initialize second list */
-    Node *start2 = NULL;
 
-    insertEnd(&start, "CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
+    list->insertEnd("CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
   
-    insertEnd(&start, "CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
+    list->insertEnd("CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
-    //display(start); 
     
-    search(&start,&start2, "Quantitiative Reasoning");
+    list->display();
+    cout << "List length: " << list->length << endl;
+    delete list;
+    
+    //search(&start,&start2, "Quantitiative Reasoning");
 
    // display(start2);
   
     return 0; 
 } 
+
+  
