@@ -30,15 +30,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,32,43,194"/>
-                <ListBox Margin="286,109,286,85" Grid.RowSpan="2">
+                <TextBox x:Name="coursestx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,32,43,194"/>
+                <ListBox x:Name="ListBoxCourses" Margin="286,109,286,85" Grid.RowSpan="2">
                     <Label Content="Required Courses in Current Major:" FontStyle="Italic" FontSize="14" Height="32" Width="281"/>
                     <ListBoxItem Content = "Item 1" />
                     <ListBoxItem Content = "Item 2" />
                     <ListBoxItem Content = "Item 3" />
                 </ListBox>
-                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,70,43,156"/>
-                <ListBox Margin="586,109,43,86" Grid.RowSpan="2">
+                <TextBox x:Name="hubtx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,70,43,156"/>
+                <ListBox x:Name="ListBoxHUB" Margin="586,109,43,86" Grid.RowSpan="2">
                     <Label Content="Required HUB credits:" FontStyle="Italic" FontSize="14" Height="32" Width="220"/>
                     <ListBoxItem Content = "Item 1" />
                     <ListBoxItem Content = "Item 2" />
@@ -46,7 +46,7 @@
                 </ListBox>
                 <Button x:Name="addtosem1" Content="add to current semester" Margin="699,50,43,178" Height="Auto" Background="#00FFFFFF" BorderBrush="#00FFFFFF" FontStyle="Italic" FontSize="11" Foreground="White" Click="addtosem1_Click"/>
                 <Button x:Name="addtosem2" Content="add to current semester" Margin="699,89,43,138" Height="Auto" Background="#00FFFFFF" BorderBrush="#00FFFFFF" FontStyle="Italic" FontSize="11" Foreground="White" Click="addtosem2_Click"/>
-                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,10,43,216" TextChanged="TextBox_TextChanged"/>
+                <TextBox x:Name="majortx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,10,43,216"/>
                 <Label Content="Choose a Major:" Margin="286,6,327,212" FontStyle="Italic" FontSize="11" Foreground="White"/>
                 <Label Content="Search Courses within Major:" Margin="286,28,327,190" FontStyle="Italic" FontSize="11" Foreground="White"/>
                 <Label Content="Search Electives and HUB courses:" Margin="286,66,327,152" FontStyle="Italic" FontSize="11" Foreground="White"/>
@@ -62,34 +62,90 @@
                 <RowDefinition Height="50*" />
                 <RowDefinition Height="206*" />
             </Grid.RowDefinitions>
-            <Button Content="Year 1" x:Name="Yr1" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White"/>
-            <Button Grid.Row="1" Content="Year 2" x:Name="Yr2" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White"/>
-            <Button Grid.Row="2" Content="Year 3" x:Name="Yr3" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White"/>
-            <Button Grid.Row="3" Content="Year 4" x:Name="Yr4" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White"/>
+            <Button Content="Year 1" x:Name="Yr1" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White" Click="Yr1_Click"/>
+            <Button Grid.Row="1" Content="Year 2" x:Name="Yr2" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White" Click="Yr2_Click"/>
+            <Button Grid.Row="2" Content="Year 3" x:Name="Yr3" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White" Click="Yr3_Click"/>
+            <Button Grid.Row="3" Content="Year 4" x:Name="Yr4" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White" Click="Yr4_Click"/>
         </Grid>
 
-        <Grid x:Name="y1s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y1s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y1s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y1s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y2s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y2s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y2s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y2s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y3s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y3s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y3s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y3s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y4s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y4s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <Grid x:Name="y4s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White">
+        <Grid x:Name="y4s2grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
     </Grid>
 
