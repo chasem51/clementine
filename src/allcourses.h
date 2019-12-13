@@ -14,19 +14,4 @@ class Node
     Node *prev;
 };
 
-class LinkedList : public Node
-{
-    public:
-    int length;
-    Node *head;
-    Node *end;
-    LinkedList();
-    ~LinkedList();
-    void insertEnd(string value);
-    void display(Node *head); 
-};
-
-bool search(string  value, LinkedList &, LinkedList &); 
-
-
 #endif

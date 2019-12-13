@@ -1,113 +1,147 @@
-#include "allcourses.h"
 #include <iostream>
-
+#include <string>
+#include <cstdio>
+#include "allcourses.h"
 using namespace std; 
- 
-
-LinkedList :: LinkedList()
-{
-    this->length = 0;
-    this->head = NULL;
-}
-
-LinkedList :: ~LinkedList()
-{
-    cout << "LIST DELETED." << endl;
-}
-
-// insert temp at the end of the linked list
-void LinkedList::insertEnd(string value) 
+  
+// insert new_node at the end of the linked list
+void insertEnd(Node** head, string value) 
 { 
     // If the list is empty, create a single node 
-    if (this->head == NULL) 
+    if (*head == NULL) 
     { 
-        Node* temp = new Node(); 
-        temp->data = value; 
-        temp->next = temp->prev = this->head; 
-        this->head = temp; 
-        this->length++; 
+        Node* new_node = new Node; 
+        new_node->data = value; 
+        new_node->next = new_node->prev = new_node; 
+        *head = new_node; 
         return; 
     } 
   
     // If list is not empty 
-    Node *last = this->end;
+    Node *last = (*head)->prev; 
   
     // Create Node
-    Node *temp = new Node(); 
-    temp->data = value; 
+    Node *new_node = new Node; 
+    new_node->data = value; 
   
-    // temp -> next points to head 
-    temp->next = this->head; 
+    // new_node -> next points to head 
+    new_node->next = *head; 
   
-    // head points to temp for doubly linked insertion 
-    this->head = temp; 
+    // head -> prev points to new_node for doubly linked insertion 
+    (*head)->prev = new_node; 
   
-    this->length++;
+    // Make last previous of new node 
+    new_node->prev = last; 
+  
+    // Make new node next of old last 
+    last->next = new_node; 
 } 
-
-void LinkedList::display(Node *head) 
+  
+// insert new_node at the beginning of the linked list
+void insertBegin(Node** head, string value) 
 { 
+    // Pointer points to last Node 
+    Node *last = (*head)->prev; 
+  
+   // create node
+    Node *new_node = new Node; 
+    new_node->data = value;
+  
+    // inserts new_node so its doubly linked
+    new_node->next = *head; 
+    new_node->prev = last; 
+  
+    // Update ptrs next and last
+    last->next = (*head)->prev = new_node; 
+  
+    // Update head pointer 
+    *head = new_node; 
+}   
+  
+void display(Node* head) 
+{ 
+    Node *temp = head; 
+  
     // forward iterative print
+    cout << "Printed elements~" << endl;
     cout << "Traversal in forward direction:" << endl; 
-    while (head != end) 
+    while (temp->next != head) 
     { 
-        cout << head->data << endl;
-        head = head->next; 
+        cout << temp->data << endl;
+        temp = temp->next; 
     } 
+    cout << temp->data << endl; 
+  
+    // backward iterative print
+    cout << "Printed elements~" << endl;
+    cout << "Traversal in reverse direction:" << endl; 
+    Node *last = head->prev; 
+    temp = last; 
+    while (temp->prev != last) 
+    { 
+        cout << temp->data << endl; 
+        temp = temp->prev; 
+    } 
+    cout << temp->data << endl; 
 } 
 
-// finds results matching an input value from start, store in second 'skipped' list start2
-bool search(string value, LinkedList &list1, LinkedList &list2) 
+// finds results matching an input value from start, store in second linked list start2
+bool search(Node **head, Node **head2, string value) 
 { 
+    // Node *temp = head;
+    Node *last = (*head)->prev; 
+    Node *temp = last->next;
+     
+    Node *temp2 = *head2;
+    Node *last2 = temp2;
+
     cout << "Searching for: " << value << endl;
 
-    while(list1.head != NULL)
+    while(temp != NULL)
     {
-        if(list1.head->data.find(value) != string::npos) // if temp -> data is equal to the value
+        if(temp->data.find(value) != string::npos) // if temp -> data is equal to the value
         {
-            list2.insertEnd(value);
+           // cout << temp->data << endl;
+
+            insertEnd(&temp2, temp->data);
             
-            if(list1.head == list1.end)
+            if(temp == last)
             {  
-                list2.display(list2.head);
-                cout << "Number of courses matching the search: " << list2.length << endl;
+                display(temp2);
                 return 0;
             }
         }
-        else if(list1.head == list1.end && list1.head->data.find(value) == string::npos) // if temp -> next is equal to start and temp -> data isn't equal to the value, search concluded
+        else if(temp == last && temp->data.find(value) == string::npos) // if temp -> next is equal to start and temp -> data isn't equal to the value, search concluded
         {
-            list1.end = NULL;
+            temp = NULL;
             cout << "Search returned no results." << endl;
             return 0;
         }
-        list1.head = list1.head->next;  // iterate until value search is resolved
+        temp = temp->next;  // iterate until value search is resolved
     }
 } 
+
   
 int main() 
 { 
     /* Initialize empty list */
-    LinkedList *list = new LinkedList();
+    Node *start = NULL; 
+    
+    /* Initialize second list */
+    Node *start2 = NULL;
 
-    /* Initialize empty list */
-    LinkedList *list2 = new LinkedList();
-
-    list->insertEnd("CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
+    insertEnd(&start, "CAS, PY212, SI II, Quantitiative Reasoning Two, CT, T/C"); 
   
-    list->insertEnd("CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
+    insertEnd(&start, "CAS, PY211, SI I, Quantitiative Reasoning One, CT, T/C"); 
+
+    insertBegin(&start, "ENG, EC327");
    
     cout << "Circular doubly linked list & its elements constructed." << endl; 
+    display(start); 
     
-    list->display(list->head);
-    
-    cout << "Number of courses: " << list->length << endl;
-    
-    search("Quantitiative Reasoning", list, list2);
+    search(&start,&start2, "Quantitiative Reasoning");
 
-    delete list;
-    delete list2;
+   // display(start2);
   
     return 0; 
 } 
-
-  
