@@ -89,10 +89,7 @@ public class DataBase
            }
            current = current.Next;
        } while ((current) != null);
-
        string[] coursearrayandcredit = coursestring.Split(',');
-
-
        for (int i = 1; i < coursearrayandcredit.Length; i = i+2)
        {
            majorcourses.Add(coursearrayandcredit[i]);
@@ -105,94 +102,94 @@ public class DataBase
 
         if (userinput == "Biomedical Engineering")
         {
-            majorcourses.add("CAS MA123");
-            majorcourses.add("ENG EK100");
-            majorcourses.add("CAS CH101");
-            majorcourses.add("ENG EK125");
-            majorcourses.add("CAS WR120");
-            majorcourses.add("CAS MA124");
-            majorcourses.add("CAS PY211");
-            majorcourses.add("CAS CH102");
-            majorcourses.add("ENG EK131");
-            majorcourses.add("ENG EK103");
-            majorcourses.add("CAS MA225");
-            majorcourses.add("CAS PY212");
-            majorcourses.add("ENG EK307");
-            majorcourses.add("ENG EK210");
-            majorcourses.add("CAS WR150");
-            majorcourses.add("CAS MA226");
-            majorcourses.add("ENG BE209");
-            majorcourses.add("ENG EK301");
-            majorcourses.add("ENG EK381");
-            majorcourses.add("CAS BI315");
-            majorcourses.add("ENG BE403");
-            majorcourses.add("ENG BE403");
-            majorcourses.add("ENG BE491");
-            majorcourses.add("ENG EK424");
-            majorcourses.add("ENG BE492");
-            majorcourses.add("ENG BE465");
-            majorcourses.add("ENG BE466");
+            majorcourses.Add("CAS MA123");
+            majorcourses.Add("ENG EK100");
+            majorcourses.Add("CAS CH101");
+            majorcourses.Add("ENG EK125");
+            majorcourses.Add("CAS WR120");
+            majorcourses.Add("CAS MA124");
+            majorcourses.Add("CAS PY211");
+            majorcourses.Add("CAS CH102");
+            majorcourses.Add("ENG EK131");
+            majorcourses.Add("ENG EK103");
+            majorcourses.Add("CAS MA225");
+            majorcourses.Add("CAS PY212");
+            majorcourses.Add("ENG EK307");
+            majorcourses.Add("ENG EK210");
+            majorcourses.Add("CAS WR150");
+            majorcourses.Add("CAS MA226");
+            majorcourses.Add("ENG BE209");
+            majorcourses.Add("ENG EK301");
+            majorcourses.Add("ENG EK381");
+            majorcourses.Add("CAS BI315");
+            majorcourses.Add("ENG BE403");
+            majorcourses.Add("ENG BE403");
+            majorcourses.Add("ENG BE491");
+            majorcourses.Add("ENG EK424");
+            majorcourses.Add("ENG BE492");
+            majorcourses.Add("ENG BE465");
+            majorcourses.Add("ENG BE466");
         }
         else if (userinput == "Computer Engineering")
         {
-            majorcourses.add("CAS MA123");
-            majorcourses.add("CAS CH131");
-            majorcourses.add("ENG EK100");
-            majorcourses.add("ENG EK125");
-            majorcourses.add("CAS WR120");
-            majorcourses.add("CAS MA124");
-            majorcourses.add("CAS PY211");
-            majorcourses.add("ENG EK131");
-            majorcourses.add("ENG EK103");
-            majorcourses.add("CAS WR150");
-            majorcourses.add("CAS MA225");
-            majorcourses.add("CAS PY212");
-            majorcourses.add("ENG EK307");
-            majorcourses.add("ENG EK327");
-            majorcourses.add("CAS MA226");
-            majorcourses.add("ENG EC311");
-            majorcourses.add("ENG EK301");
-            majorcourses.add("ENG EK210");
-            majorcourses.add("ENG EC330");
-            majorcourses.add("ENG EK381");
-            majorcourses.add("ENG EC413");
-            majorcourses.add("CAS MA193");
-            majorcourses.add("ENG EC463");
-            majorcourses.add("ENG EC464");
+            majorcourses.Add("CAS MA123");
+            majorcourses.Add("CAS CH131");
+            majorcourses.Add("ENG EK100");
+            majorcourses.Add("ENG EK125");
+            majorcourses.Add("CAS WR120");
+            majorcourses.Add("CAS MA124");
+            majorcourses.Add("CAS PY211");
+            majorcourses.Add("ENG EK131");
+            majorcourses.Add("ENG EK103");
+            majorcourses.Add("CAS WR150");
+            majorcourses.Add("CAS MA225");
+            majorcourses.Add("CAS PY212");
+            majorcourses.Add("ENG EK307");
+            majorcourses.Add("ENG EK327");
+            majorcourses.Add("CAS MA226");
+            majorcourses.Add("ENG EC311");
+            majorcourses.Add("ENG EK301");
+            majorcourses.Add("ENG EK210");
+            majorcourses.Add("ENG EC330");
+            majorcourses.Add("ENG EK381");
+            majorcourses.Add("ENG EC413");
+            majorcourses.Add("CAS MA193");
+            majorcourses.Add("ENG EC463");
+            majorcourses.Add("ENG EC464");
 
 
         }
         else if (userinput == "Mechanical Engineering")
         {
-            majorcourses.add("CAS MA123");
-            majorcourses.add("CAS CH131");
-            majorcourses.add("ENG EK100");
-            majorcourses.add("ENG EK125");
-            majorcourses.add("CAS WR120");
-            majorcourses.add("CAS MA124");
-            majorcourses.add("CAS PY211");
-            majorcourses.add("ENG EK131");
-            majorcourses.add("ENG EK103");
-            majorcourses.add("CAS WR150");
-            majorcourses.add("CAS MA225");
-            majorcourses.add("CAS PY212");
-            majorcourses.add("ENG EK307");
-            majorcourses.add("ENG ME357");
-            majorcourses.add("CAS MA226");
-            majorcourses.add("ENG EC381");
-            majorcourses.add("ENG EK301");
-            majorcourses.add("ENG EK210");
-            majorcourses.add("ENG ME304");
-            majorcourses.add("ENG ME303");
-            majorcourses.add("ENG ME305");
-            majorcourses.add("ENG ME358");
-            majorcourses.add("ENG ME306");
-            majorcourses.add("ENG ME419");
-            majorcourses.add("ENG ME302");
-            majorcourses.add("ENG ME360");
-            majorcourses.add("ENG ME310");
-            majorcourses.add("ENG ME460");
-            majorcourses.add("ENG ME461");
+            majorcourses.Add("CAS MA123");
+            majorcourses.Add("CAS CH131");
+            majorcourses.Add("ENG EK100");
+            majorcourses.Add("ENG EK125");
+            majorcourses.Add("CAS WR120");
+            majorcourses.Add("CAS MA124");
+            majorcourses.Add("CAS PY211");
+            majorcourses.Add("ENG EK131");
+            majorcourses.Add("ENG EK103");
+            majorcourses.Add("CAS WR150");
+            majorcourses.Add("CAS MA225");
+            majorcourses.Add("CAS PY212");
+            majorcourses.Add("ENG EK307");
+            majorcourses.Add("ENG ME357");
+            majorcourses.Add("CAS MA226");
+            majorcourses.Add("ENG EC381");
+            majorcourses.Add("ENG EK301");
+            majorcourses.Add("ENG EK210");
+            majorcourses.Add("ENG ME304");
+            majorcourses.Add("ENG ME303");
+            majorcourses.Add("ENG ME305");
+            majorcourses.Add("ENG ME358");
+            majorcourses.Add("ENG ME306");
+            majorcourses.Add("ENG ME419");
+            majorcourses.Add("ENG ME302");
+            majorcourses.Add("ENG ME360");
+            majorcourses.Add("ENG ME310");
+            majorcourses.Add("ENG ME460");
+            majorcourses.Add("ENG ME461");
 
         }
         else if (userinput == "Electrical Engineering")
@@ -241,9 +238,7 @@ public class DataBase
             }
             current = current.Next;
         } while ((current.ToString()) != "0");
-
         string[] coursearrayandcredit = coursestring.Split(',');
-
         for (int i = 2; i < coursearrayandcredit.Length; i = i + 2)
         {
             majorcoursecredits.Add(coursearrayandcredit[i]);
@@ -252,126 +247,126 @@ public class DataBase
 
         if (userinput == "Biomedical Engineering")
         {
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("0");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("3");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("0");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("3");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
         }
         else if (userinput == "Computer Engineering")
         {
 
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("0");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("3");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("0");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("3");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
         }
         else if (userinput == "Mechanical Engineering")
         {
 
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("0");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("3");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("0");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("3");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
         }
         else if (userinput == "Electrical Engineering")
         {
 
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("0");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("3");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("4");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("2");
-            majorcoursecredits.add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("0");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("3");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("4");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("2");
+            majorcoursecredits.Add("4");
         }
 
         return majorcoursecredits;
@@ -396,9 +391,7 @@ public class DataBase
             }
             current = current.Next;
         } while ((current) != null);
-
         string[] electives = electivestring.Split(',');
-
         for (int i = 0; i < electives.Length; i++)
         {
             majorcourseelectives.Add(electives[i]);
@@ -406,29 +399,29 @@ public class DataBase
         */
         if (userinput == "Biomedical Engineering")
         {
-            majorcourseelectives.add("One Continua & Fields Elective");
-            majorcourseelectives.add("Two Suitable Professional Electives");
-            majorcourseelectives.add("One Engineering elective");
-            majorcourseelectives.add("Two Biomedical engineering electives");
-            majorcourseelectives.add("One Biomedical engineering design elective");
+            majorcourseelectives.Add("One Continua & Fields Elective");
+            majorcourseelectives.Add("Two Suitable Professional Electives");
+            majorcourseelectives.Add("One Engineering elective");
+            majorcourseelectives.Add("Two Biomedical engineering electives");
+            majorcourseelectives.Add("One Biomedical engineering design elective");
         }
         else if (userinput == "Computer Engineering")
         {
-            majorcourseelectives.add("Two Core Electives");
-            majorcourseelectives.add("Two Computer Engineering Electives");
-            majorcourseelectives.add("One EE Breadth Elective");
-            majorcourseelectives.add("Technical Electives");
+            majorcourseelectives.Add("Two Core Electives");
+            majorcourseelectives.Add("Two Computer Engineering Electives");
+            majorcourseelectives.Add("One EE Breadth Elective");
+            majorcourseelectives.Add("Technical Electives");
         }
         else if (userinput == "Mechanical Engineering")
         {
-            majorcourseelectives.add("Four Advanced Electives");
+            majorcourseelectives.Add("Four Advanced Electives");
         }
         else if (userinput == "Electrical Engineering")
         {
-            majorcourseelectives.add("One Systems Elective");
-            majorcourseelectives.add("One Electrophysics Elective");
-            majorcourseelectives.add("One Computer Elective");
-            majorcourseelectives.add("Three Technical Electives");
+            majorcourseelectives.Add("One Systems Elective");
+            majorcourseelectives.Add("One Electrophysics Elective");
+            majorcourseelectives.Add("One Computer Elective");
+            majorcourseelectives.Add("Three Technical Electives");
         }
 
 
@@ -452,28 +445,77 @@ public class DataBase
                 current = current.Next;
                 hubstring = current.Next.ToString();
             }
-
             current = current.Next;
         } while ((current = current.Next) != null);
-
         string[] hubs = hubstring.Split(',');
-
         for (int i = 0; i < hubs.Length; i++)
         {
             majorcoursehubs.Add(hubs[i]);
         }
         */
-        majorcoursehubs.add("PIL");
-        majorcoursehubs.add("AE");
-        majorcoursehubs.add("HC");
-        majorcoursehubs.add("SI");
-        majorcoursehubs.add("IC");
-        majorcoursehubs.add("GCI");
-        majorcoursehubs.add("GCI");
-        majorcoursehubs.add("ER");
+        majorcoursehubs.Add("PIL");
+        majorcoursehubs.Add("AE");
+        majorcoursehubs.Add("HC");
+        majorcoursehubs.Add("SI");
+        majorcoursehubs.Add("IC");
+        majorcoursehubs.Add("GCI");
+        majorcoursehubs.Add("GCI");
+        majorcoursehubs.Add("ER");
 
 
 
         return majorcoursehubs;
     }
+
+    string[] gradeletter = [ "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F" ];
+    double[] gradevalues = [4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.0, 0.0];
+    double gradevalue;
+        
+    public double gradeconverter(string grade1)
+        {   
+            for( int i = 0; i < 10; i++)
+            {
+                if(gradeletter[i] == grade1)
+                {
+                    return gradesvalue[i];
+                }
+            } 
+        } 
+
+    public double GetGPA(string numcourses, string[] grades, string[] credits)
+    {
+        
+        List<double> studentgradevalues = new List<double>();
+        List<int> creditsint = new List<int>();
+    
+
+        int numcoursesint = int.Parse(numcourses);
+
+        void creditconverter(string[] credits)
+        {   
+            for( int i = 0; i < numcoursesint; i++)
+            {
+                int temp = int.Parse(credits[i]);
+                creditsint.Add(temp);
+            }  
+        } 
+
+        while(int i <= numcoursesint)
+        {
+            double temp = gradeconverter(grades[i])
+            studentgradevalues.Add(temp);
+        }
+
+        double summation = 0;
+        double creditssum = 0; 
+
+        for(int i = 0; i < numcoursesint; i++)
+        {
+            summation += studentgradevalues[i] * creditsint[i];
+            creditssum += creditsint[i];
+        }
+
+        return summation/creditssum;
+    }
 }
+    
