@@ -3,21 +3,21 @@
 using System;
 using Systems.Collections.Generic;
 
-public class DataBase 
-{ 
-  
+public class DataBase
+{
+
     // Driver code 
-    public static void MakeMajors() 
-    { 
-  
+    public static void MakeMajors()
+    {
+
         // Creating a LinkedList of Strings 
-        LinkedList<String> Majors = new LinkedList<String>(); 
-  
+        LinkedList<String> Majors = new LinkedList<String>();
+
         // Biomedical Engineering 
-        Majors.AddLast("Biomedical Engineering"); 
-        Majors.AddLast("Required, CAS MA123, 4, ENG EK100, 0, CAS CH101, 4, ENG EK125, 4, CAS WR120, 4, CAS MA124, 4, CAS PY211, 4, CAS CH102, 4, ENG EK131, 2, ENG EK103, 3, CAS MA225, 4, CAS PY212, 4, ENG EK307, 4, ENG EK210, 2, CAS WR150, 4, CAS MA226, 4, ENG BE209, 4, ENG EK301, 4, ENG EK381, 4, CAS BI315, 4, ENG BE403, 4, ENG BE403, 4, ENG BE491, 2, ENG EK424, 4, ENG BE 492, 2, ENG BE465, 2, ENG BE466, 4, end"); 
-        Majors.AddLast("Electives, One Continua & Fields Elective, Two Suitable Professional Electives, One Engineering elective, Two Biomedical engineering electives, One Biomedical engineering design elective"); 
-        Majors.AddLast("Hub Credits, PIL, AE, HC, SI, IC, GCI, GCI, ER"); 
+        Majors.AddLast("Biomedical Engineering");
+        Majors.AddLast("Required, CAS MA123, 4, ENG EK100, 0, CAS CH101, 4, ENG EK125, 4, CAS WR120, 4, CAS MA124, 4, CAS PY211, 4, CAS CH102, 4, ENG EK131, 2, ENG EK103, 3, CAS MA225, 4, CAS PY212, 4, ENG EK307, 4, ENG EK210, 2, CAS WR150, 4, CAS MA226, 4, ENG BE209, 4, ENG EK301, 4, ENG EK381, 4, CAS BI315, 4, ENG BE403, 4, ENG BE403, 4, ENG BE491, 2, ENG EK424, 4, ENG BE 492, 2, ENG BE465, 2, ENG BE466, 4, end");
+        Majors.AddLast("Electives, One Continua & Fields Elective, Two Suitable Professional Electives, One Engineering elective, Two Biomedical engineering electives, One Biomedical engineering design elective");
+        Majors.AddLast("Hub Credits, PIL, AE, HC, SI, IC, GCI, GCI, ER");
 
         //Computer Engineering
 
@@ -46,12 +46,12 @@ public class DataBase
     public List<String> ReturnMajor()
     {
         string current = Majors.First;
-        List<String> majorlist = new List<String>(); 
+        List<String> majorlist = new List<String>();
         string[] majorarray;
 
         do
         {
-            if(current == "Mechanical Engineering" || current == "Electrical Engineering" || current == "Computer Engineering" || current == "Biomedical Engineering")
+            if (current == "Mechanical Engineering" || current == "Electrical Engineering" || current == "Computer Engineering" || current == "Biomedical Engineering")
             {
                 majorlist.AddLast(current);
             }
@@ -65,11 +65,11 @@ public class DataBase
     public List<String> ReturnMajor_courses(string userinput)
     {
         string current = Majors.First;
-        List<String> majorcourses = new List<String>(); 
+        List<String> majorcourses = new List<String>();
         string coursestring;
         do
         {
-            if(current == userinput)
+            if (current == userinput)
             {
                 coursestring = current.Next;
             }
@@ -77,7 +77,7 @@ public class DataBase
 
         string[] coursearrayandcredit = coursestring.split(',');
 
-        for(i = 1, i < coursearrayandcredit.size, i + 2)
+        for (i = 1; i < coursearrayandcredit.size; i + 2)
         {
             majorcourses.AddLast(coursearrayandcredit[i]);
         }
@@ -89,11 +89,11 @@ public class DataBase
     public List<String> ReturnMajor_coursecredits(string userinput)
     {
         string current = Majors.First;
-        List<String> majorcoursecredits = new List<String>(); 
+        List<String> majorcoursecredits = new List<String>();
         string coursestring;
         do
         {
-            if(current == userinput)
+            if (current == userinput)
             {
                 coursestring = current.Next;
             }
@@ -101,7 +101,7 @@ public class DataBase
 
         string[] coursearrayandcredit = coursestring.split(',');
 
-        for(i = 2, i < coursearrayandcredit.size, i + 2)
+        for (i = 2; i < coursearrayandcredit.size; i + 2)
         {
             majorcoursecredits.AddLast(coursearrayandcredit[i]);
         }
@@ -115,11 +115,11 @@ public class DataBase
     public List<String> ReturnMajor_electives(string userinput)
     {
         string current = Majors.First;
-        List<String> majorcourseelectives = new List<String>(); 
+        List<String> majorcourseelectives = new List<String>();
         string electivestring;
         do
         {
-            if(current == userinput)
+            if (current == userinput)
             {
                 current = current.Next;
                 electivestring = current.Next;
@@ -128,7 +128,7 @@ public class DataBase
 
         string[] electives = electivestring.split(',');
 
-        for(i = 0, i < electives.size, i++)
+        for (i = 0; i < electives.size; i++)
         {
             majorcourseelectives.AddLast(electives[i]);
         }
@@ -141,11 +141,11 @@ public class DataBase
     public List<String> ReturnMajor_hub(string[] userinput)
     {
         string current = Majors.First;
-        List<String> majorcoursehubs = new List<String>(); 
+        List<String> majorcoursehubs = new List<String>();
         string hubstring;
         do
         {
-            if(current == userinput)
+            if (current == userinput)
             {
                 current = current.Next;
                 current = current.Next;
@@ -155,15 +155,11 @@ public class DataBase
 
         string[] hubs = hubstring.split(',');
 
-        for(i = 0, i < hubs.size, i++)
+        for (i = 0; i < hubs.size; i++)
         {
             majorcoursehubs.AddLast(electives[i]);
         }
 
         return majorcoursehubs;
     }
-
-
 }
-
-#endif
