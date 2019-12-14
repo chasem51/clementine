@@ -500,7 +500,7 @@ public class DataBase
 
         int numcoursesint = int.Parse(numcourses);
 
-        creditconverter(credits, numcoursesint, creditsint)
+        creditconverter(credits, numcoursesint, creditsint);
 
         while(int i <= numcoursesint)
         {
