@@ -138,7 +138,7 @@ public class DataBase
 
 
 
-    public List<String> ReturnMajor_hub(string[] userinput)
+    public List<String> ReturnMajor_hub(string userinput)
     {
         string current = Majors.First;
         List<String> majorcoursehubs = new List<String>();
