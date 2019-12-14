@@ -466,4 +466,56 @@ public class DataBase
 
         return majorcoursehubs;
     }
+
+    string[] gradeletter = [ "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F" ];
+    double[] gradevalues = [4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.0, 0.0];
+    double gradevalue;
+        
+    public double gradeconverter(string grade1)
+        {   
+            for( int i = 0; i < 10; i++)
+            {
+                if(gradeletter[i] == grade1)
+                {
+                    return gradesvalue[i];
+                }
+            } 
+        } 
+
+    public double GetGPA(string numcourses, string[] grades, string[] credits)
+    {
+        
+        List<double> studentgradevalues = new List<double>();
+        List<int> creditsint = new List<int>();
+    
+
+        int numcoursesint = int.Parse(numcourses);
+
+        void creditconverter(string[] credits)
+        {   
+            for( int i = 0; i < numcoursesint; i++)
+            {
+                int temp = int.Parse(credits[i]);
+                creditsint.Add(temp);
+            }  
+        } 
+
+        while(int i <= numcoursesint)
+        {
+            double temp = gradeconverter(grades[i])
+            studentgradevalues.Add(temp);
+        }
+
+        double summation = 0;
+        double creditssum = 0; 
+
+        for(int i = 0; i < numcoursesint; i++)
+        {
+            summation += studentgradevalues[i] * creditsint[i];
+            creditssum += creditsint[i];
+        }
+
+        return summation/creditssum;
+    }
 }
+    
