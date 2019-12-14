@@ -482,6 +482,15 @@ public class DataBase
             } 
         } 
 
+    public void creditconverter(string[] creditsstrings, int num, List<int> creditslist)
+        {   
+            for( int i = 0; i < num; i++)
+            {
+                int temp = int.Parse(creditsstrings[i]);
+                creditslist.Add(temp);
+            }  
+        }
+
     public double GetGPA(string numcourses, string[] grades, string[] credits)
     {
         
@@ -491,14 +500,7 @@ public class DataBase
 
         int numcoursesint = int.Parse(numcourses);
 
-        void creditconverter(string[] credits)
-        {   
-            for( int i = 0; i < numcoursesint; i++)
-            {
-                int temp = int.Parse(credits[i]);
-                creditsint.Add(temp);
-            }  
-        } 
+        creditconverter(credits, numcoursesint, creditsint);
 
         while(int i <= numcoursesint)
         {
