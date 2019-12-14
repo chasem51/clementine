@@ -53,7 +53,7 @@ public class DataBase
         var current = Majors.First;
         var currentalias = Majors.First.Next;
         List<String> majorlist = new List<String>();
-        /*
+        
         do
         {
             if (current.ToString() == "Mechanical Engineering" || current.ToString() == "Electrical Engineering" || current.ToString() == "Computer Engineering" || current.ToString() == "Biomedical Engineering")
@@ -63,12 +63,7 @@ public class DataBase
             current = currentalias;
             currentalias = currentalias.Next;
         } while ((currentalias) != null);
-        */
-
-        majorlist.Add("Mechanical Engineering");
-        majorlist.Add("Elecrical Engineering");
-        majorlist.Add("Computer Engineering");
-        majorlist.Add("Biomedical Engineering");
+        
 
 
         return majorlist;
@@ -80,7 +75,7 @@ public class DataBase
         LinkedList<String> Majors = MakeMajors();
         var current = Majors.First;
         List<String> majorcourses = new List<String>();
-        /*
+        
        do
        {
            if (current.ToString() == userinput)
@@ -98,125 +93,7 @@ public class DataBase
             majorcourseelectives.add("One Computer Elective");
             majorcourseelectives.add("Three Technical Electives");
        }
-       */
-
-        if (userinput == "Biomedical Engineering")
-        {
-            majorcourses.Add("CAS MA123");
-            majorcourses.Add("ENG EK100");
-            majorcourses.Add("CAS CH101");
-            majorcourses.Add("ENG EK125");
-            majorcourses.Add("CAS WR120");
-            majorcourses.Add("CAS MA124");
-            majorcourses.Add("CAS PY211");
-            majorcourses.Add("CAS CH102");
-            majorcourses.Add("ENG EK131");
-            majorcourses.Add("ENG EK103");
-            majorcourses.Add("CAS MA225");
-            majorcourses.Add("CAS PY212");
-            majorcourses.Add("ENG EK307");
-            majorcourses.Add("ENG EK210");
-            majorcourses.Add("CAS WR150");
-            majorcourses.Add("CAS MA226");
-            majorcourses.Add("ENG BE209");
-            majorcourses.Add("ENG EK301");
-            majorcourses.Add("ENG EK381");
-            majorcourses.Add("CAS BI315");
-            majorcourses.Add("ENG BE403");
-            majorcourses.Add("ENG BE403");
-            majorcourses.Add("ENG BE491");
-            majorcourses.Add("ENG EK424");
-            majorcourses.Add("ENG BE492");
-            majorcourses.Add("ENG BE465");
-            majorcourses.Add("ENG BE466");
-        }
-        else if (userinput == "Computer Engineering")
-        {
-            majorcourses.Add("CAS MA123");
-            majorcourses.Add("CAS CH131");
-            majorcourses.Add("ENG EK100");
-            majorcourses.Add("ENG EK125");
-            majorcourses.Add("CAS WR120");
-            majorcourses.Add("CAS MA124");
-            majorcourses.Add("CAS PY211");
-            majorcourses.Add("ENG EK131");
-            majorcourses.Add("ENG EK103");
-            majorcourses.Add("CAS WR150");
-            majorcourses.Add("CAS MA225");
-            majorcourses.Add("CAS PY212");
-            majorcourses.Add("ENG EK307");
-            majorcourses.Add("ENG EK327");
-            majorcourses.Add("CAS MA226");
-            majorcourses.Add("ENG EC311");
-            majorcourses.Add("ENG EK301");
-            majorcourses.Add("ENG EK210");
-            majorcourses.Add("ENG EC330");
-            majorcourses.Add("ENG EK381");
-            majorcourses.Add("ENG EC413");
-            majorcourses.Add("CAS MA193");
-            majorcourses.Add("ENG EC463");
-            majorcourses.Add("ENG EC464");
-
-
-        }
-        else if (userinput == "Mechanical Engineering")
-        {
-            majorcourses.Add("CAS MA123");
-            majorcourses.Add("CAS CH131");
-            majorcourses.Add("ENG EK100");
-            majorcourses.Add("ENG EK125");
-            majorcourses.Add("CAS WR120");
-            majorcourses.Add("CAS MA124");
-            majorcourses.Add("CAS PY211");
-            majorcourses.Add("ENG EK131");
-            majorcourses.Add("ENG EK103");
-            majorcourses.Add("CAS WR150");
-            majorcourses.Add("CAS MA225");
-            majorcourses.Add("CAS PY212");
-            majorcourses.Add("ENG EK307");
-            majorcourses.Add("ENG ME357");
-            majorcourses.Add("CAS MA226");
-            majorcourses.Add("ENG EC381");
-            majorcourses.Add("ENG EK301");
-            majorcourses.Add("ENG EK210");
-            majorcourses.Add("ENG ME304");
-            majorcourses.Add("ENG ME303");
-            majorcourses.Add("ENG ME305");
-            majorcourses.Add("ENG ME358");
-            majorcourses.Add("ENG ME306");
-            majorcourses.Add("ENG ME419");
-            majorcourses.Add("ENG ME302");
-            majorcourses.Add("ENG ME360");
-            majorcourses.Add("ENG ME310");
-            majorcourses.Add("ENG ME460");
-            majorcourses.Add("ENG ME461");
-
-        }
-        else if (userinput == "Electrical Engineering")
-        {
-            majorcourses.Add("CAS MA123");
-            majorcourses.Add("CAS CH131");
-            majorcourses.Add("ENG EK100");
-            majorcourses.Add("ENG EK125");
-            majorcourses.Add("CAS WR120");
-            majorcourses.Add("CAS MA124");
-            majorcourses.Add("CAS PY211");
-            majorcourses.Add("ENG EK131");
-            majorcourses.Add("ENG EK103");
-            majorcourses.Add("CAS WR150");
-            majorcourses.Add("CAS MA225");
-            majorcourses.Add("CAS PY212");
-            majorcourses.Add("ENG EK307");
-            majorcourses.Add("ENG EK210");
-            majorcourses.Add("CAS MA226");
-            majorcourses.Add("CAS PY313");
-            majorcourses.Add("ENG EK301");
-            majorcourses.Add("ENG EC455");
-            majorcourses.Add("ENG EC401");
-            majorcourses.Add("ENG EC311");
-            majorcourses.Add("ENG EK381");
-            majorcourses.Add("ENG EC464");
-        }
+       
 
         return majorcourses;
 
@@ -229,7 +106,7 @@ public class DataBase
         var current = Majors.First;
         List<String> majorcoursecredits = new List<String>();
 
-        /*
+        
         do
         {
             if (current.ToString() == userinput)
@@ -243,131 +120,7 @@ public class DataBase
         {
             majorcoursecredits.Add(coursearrayandcredit[i]);
         }
-        */
-
-        if (userinput == "Biomedical Engineering")
-        {
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("0");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("3");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-        }
-        else if (userinput == "Computer Engineering")
-        {
-
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("0");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("3");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-        }
-        else if (userinput == "Mechanical Engineering")
-        {
-
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("0");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("3");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-        }
-        else if (userinput == "Electrical Engineering")
-        {
-
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("0");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("3");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("4");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("2");
-            majorcoursecredits.Add("4");
-        }
+        
 
         return majorcoursecredits;
 
@@ -381,7 +134,7 @@ public class DataBase
         var current = Majors.First;
         List<String> majorcourseelectives = new List<String>();
 
-        /*
+        
         do
         {
             if (current.ToString() == userinput)
@@ -396,33 +149,8 @@ public class DataBase
         {
             majorcourseelectives.Add(electives[i]);
         }
-        */
-        if (userinput == "Biomedical Engineering")
-        {
-            majorcourseelectives.Add("One Continua & Fields Elective");
-            majorcourseelectives.Add("Two Suitable Professional Electives");
-            majorcourseelectives.Add("One Engineering elective");
-            majorcourseelectives.Add("Two Biomedical engineering electives");
-            majorcourseelectives.Add("One Biomedical engineering design elective");
-        }
-        else if (userinput == "Computer Engineering")
-        {
-            majorcourseelectives.Add("Two Core Electives");
-            majorcourseelectives.Add("Two Computer Engineering Electives");
-            majorcourseelectives.Add("One EE Breadth Elective");
-            majorcourseelectives.Add("Technical Electives");
-        }
-        else if (userinput == "Mechanical Engineering")
-        {
-            majorcourseelectives.Add("Four Advanced Electives");
-        }
-        else if (userinput == "Electrical Engineering")
-        {
-            majorcourseelectives.Add("One Systems Elective");
-            majorcourseelectives.Add("One Electrophysics Elective");
-            majorcourseelectives.Add("One Computer Elective");
-            majorcourseelectives.Add("Three Technical Electives");
-        }
+
+
 
 
         return majorcourseelectives;
@@ -436,7 +164,7 @@ public class DataBase
         var current = Majors.First;
         List<String> majorcoursehubs = new List<String>();
 
-        /*
+
         do
         {
             if (current.ToString() == userinput)
@@ -452,72 +180,86 @@ public class DataBase
         {
             majorcoursehubs.Add(hubs[i]);
         }
-        */
-        majorcoursehubs.Add("PIL");
-        majorcoursehubs.Add("AE");
-        majorcoursehubs.Add("HC");
-        majorcoursehubs.Add("SI");
-        majorcoursehubs.Add("IC");
-        majorcoursehubs.Add("GCI");
-        majorcoursehubs.Add("GCI");
-        majorcoursehubs.Add("ER");
-
-
 
         return majorcoursehubs;
     }
 
-    string[] gradeletter = [ "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F" ];
-    double[] gradevalues = [4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.0, 0.0];
-    double gradevalue;
-        
-    public double gradeconverter(string grade1)
-        {   
-            for( int i = 0; i < 10; i++)
-            {
-                if(gradeletter[i] == grade1)
-                {
-                    return gradesvalue[i];
-                }
-            } 
-        } 
+    
 
-    public void creditconverter(string[] creditsstrings, int num, List<int> creditslist)
-        {   
-            for( int i = 0; i < num; i++)
-            {
-                int temp = int.Parse(creditsstrings[i]);
-                creditslist.Add(temp);
-            }  
-        }
 
-    public double GetGPA(string numcourses, string[] grades, string[] credits)
+    static public double gradeconverter(string grade1, double[] gradevalues, string[] gradeletter)
     {
-        
+        for (int i = 0; i < 10; i++)
+        {
+            if (gradeletter[i] == grade1)
+            {
+                return gradevalues[i];
+            }
+        }
+        return 0;
+    }
+
+    static public void creditconverter(string[] creditsstrings, int num, List<int> creditslist)
+    {
+        for (int i = 0; i < num; i++)
+        {
+            int temp = int.Parse(creditsstrings[i]); 
+            creditslist.Add(temp);
+        }
+    }
+
+    static public double GetGPA(string numcourses, string[] grades, string[] credits)
+    {
+        string[] gradeletter = new string[10];
+        gradeletter[0] = "A";
+        gradeletter[1] = "A-";
+        gradeletter[2] = "B+";
+        gradeletter[3] = "B";
+        gradeletter[4] = "B-";
+        gradeletter[5] = "C+";
+        gradeletter[6] = "C";
+        gradeletter[7] = "C-";
+        gradeletter[8] = "D";
+        gradeletter[9] = "F";
+
+        double[] gradevalues = new double[10];
+        gradevalues[0] = 4.0;
+        gradevalues[1] = 3.7;
+        gradevalues[2] = 3.3;
+        gradevalues[3] = 3.0;
+        gradevalues[4] = 2.7;
+        gradevalues[5] = 2.3;
+        gradevalues[6] = 2.0;
+        gradevalues[7] = 1.7;
+        gradevalues[8] = 1.0;
+        gradevalues[9] = 0.0;
+
+
         List<double> studentgradevalues = new List<double>();
         List<int> creditsint = new List<int>();
-    
+
 
         int numcoursesint = int.Parse(numcourses);
 
         creditconverter(credits, numcoursesint, creditsint);
 
-        while(int i <= numcoursesint)
+        int i = 0;
+        while (i <= numcoursesint)
         {
-            double temp = gradeconverter(grades[i])
+            double temp = gradeconverter(grades[i], gradevalues, gradeletter);
             studentgradevalues.Add(temp);
+            i++;
         }
 
         double summation = 0;
-        double creditssum = 0; 
+        double creditssum = 0;
 
-        for(int i = 0; i < numcoursesint; i++)
+        for (i = 0; i < numcoursesint; i++)
         {
             summation += studentgradevalues[i] * creditsint[i];
             creditssum += creditsint[i];
         }
 
-        return summation/creditssum;
+        return summation / creditssum;
     }
 }
-    
