@@ -23,7 +23,7 @@ Project Technology:
 C#
 Python
 Windows Presentation Foundation (WPF) framework
-.NET core
+.NET core 3.0
 
 GitHub Repository Link: https://github.com/chasem51/clementine
 
