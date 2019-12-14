@@ -88,10 +88,6 @@ public class DataBase
        for (int i = 1; i < coursearrayandcredit.Length; i = i+2)
        {
            majorcourses.Add(coursearrayandcredit[i]);
-           majorcourseelectives.add("One Systems Elective")
-            majorcourseelectives.add("One Electrophysics Elective");
-            majorcourseelectives.add("One Computer Elective");
-            majorcourseelectives.add("Three Technical Electives");
        }
        
 
