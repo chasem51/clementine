@@ -153,7 +153,8 @@ namespace Clementine
                 y1s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y11);
                 y11++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y1s2grid.Visibility == Visibility.Visible)
             {
@@ -161,7 +162,8 @@ namespace Clementine
                 y1s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y12);
                 y12++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y2s1grid.Visibility == Visibility.Visible)
             {
@@ -169,7 +171,8 @@ namespace Clementine
                 y2s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y21);
                 y21++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y2s2grid.Visibility == Visibility.Visible)
             {
@@ -177,7 +180,8 @@ namespace Clementine
                 y2s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y22);
                 y22++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y3s1grid.Visibility == Visibility.Visible)
             {
@@ -185,7 +189,8 @@ namespace Clementine
                 y3s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y31);
                 y31++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y3s2grid.Visibility == Visibility.Visible)
             {
@@ -193,7 +198,8 @@ namespace Clementine
                 y3s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y32);
                 y32++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y4s1grid.Visibility == Visibility.Visible)
             {
@@ -201,7 +207,8 @@ namespace Clementine
                 y4s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y41);
                 y41++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) { FontWeight = FontWeights.Bold });
             }
             else if (y4s2grid.Visibility == Visibility.Visible)
             {
@@ -209,7 +216,8 @@ namespace Clementine
                 y4s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y42);
                 y42++;
-                tb.Inlines.Add(coursetx.Text);
+                tb.Margin = new Thickness(20);
+                tb.Inlines.Add(new Run(coursetx.Text) {FontWeight = FontWeights.Bold});
             }
         }
 
@@ -217,7 +225,7 @@ namespace Clementine
         {
             bool found = false;
             var border = (resultStack.Parent as ScrollViewer).Parent as Border;
-            var data = Model.GetData();
+            var data = DataBase.ReturnMajor();
 
             string query = (sender as TextBox).Text;
 
@@ -280,9 +288,10 @@ namespace Clementine
 
         private void coursetx_KeyUp(object sender, KeyEventArgs e)
         {
+            string userinput = majortx.Text;
             bool found = false;
             var border = (resultStack2.Parent as ScrollViewer).Parent as Border;
-            var data = Model.GetData();
+            var data = DataBase.ReturnMajor_courses(userinput);
 
             string query = (sender as TextBox).Text;
 
@@ -343,6 +352,8 @@ namespace Clementine
 
             string userinput = majortx.Text;
         }
+
+        //Add courses from current major to ListBoxCourses
 
     }
 }
