@@ -1,4 +1,5 @@
-﻿using System;
+﻿using autocompletetextboxprac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UIControls;
 
 namespace Clementine
 {
@@ -147,81 +147,13 @@ namespace Clementine
         int y42 = 0;
         private void addtosem1_Click(object sender, RoutedEventArgs e)
         {
-            if(y1s1grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y1s1grid.Children.Add(tb);
-                Grid.SetRow(tb, y11);
-                y11++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y1s2grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y1s2grid.Children.Add(tb);
-                Grid.SetRow(tb, y12);
-                y12++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y2s1grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y2s1grid.Children.Add(tb);
-                Grid.SetRow(tb, y21);
-                y21++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y2s2grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y2s2grid.Children.Add(tb);
-                Grid.SetRow(tb, y22);
-                y22++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y3s1grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y3s1grid.Children.Add(tb);
-                Grid.SetRow(tb, y31);
-                y31++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y3s2grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y3s2grid.Children.Add(tb);
-                Grid.SetRow(tb, y32);
-                y32++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y4s1grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y4s1grid.Children.Add(tb);
-                Grid.SetRow(tb, y41);
-                y41++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-            else if (y4s2grid.Visibility == Visibility.Visible)
-            {
-                TextBlock tb = new TextBlock();
-                y4s2grid.Children.Add(tb);
-                Grid.SetRow(tb, y42);
-                y42++;
-                tb.Inlines.Add(coursestx.Text);
-            }
-        }
-
-        private void addtosem2_Click(object sender, RoutedEventArgs e)
-        {
             if (y1s1grid.Visibility == Visibility.Visible)
             {
                 TextBlock tb = new TextBlock();
                 y1s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y11);
                 y11++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y1s2grid.Visibility == Visibility.Visible)
             {
@@ -229,7 +161,7 @@ namespace Clementine
                 y1s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y12);
                 y12++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y2s1grid.Visibility == Visibility.Visible)
             {
@@ -237,7 +169,7 @@ namespace Clementine
                 y2s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y21);
                 y21++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y2s2grid.Visibility == Visibility.Visible)
             {
@@ -245,7 +177,7 @@ namespace Clementine
                 y2s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y22);
                 y22++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y3s1grid.Visibility == Visibility.Visible)
             {
@@ -253,7 +185,7 @@ namespace Clementine
                 y3s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y31);
                 y31++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y3s2grid.Visibility == Visibility.Visible)
             {
@@ -261,7 +193,7 @@ namespace Clementine
                 y3s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y32);
                 y32++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y4s1grid.Visibility == Visibility.Visible)
             {
@@ -269,7 +201,7 @@ namespace Clementine
                 y4s1grid.Children.Add(tb);
                 Grid.SetRow(tb, y41);
                 y41++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
             else if (y4s2grid.Visibility == Visibility.Visible)
             {
@@ -277,18 +209,140 @@ namespace Clementine
                 y4s2grid.Children.Add(tb);
                 Grid.SetRow(tb, y42);
                 y42++;
-                tb.Inlines.Add(hubtx.Text);
+                tb.Inlines.Add(coursetx.Text);
             }
         }
 
-
-        /*private void majortx_TextChanged(object sender, TextChangedEventArgs e)
+        private void majortx_KeyUp(object sender, KeyEventArgs e)
         {
-            while (majortx.Text == GetMajors())
-                ListBoxCourses.Items = GetCourses();
-                ListBoxHUB.Items = GetHubCourses();
+            bool found = false;
+            var border = (resultStack.Parent as ScrollViewer).Parent as Border;
+            var data = Model.GetData();
+
+            string query = (sender as TextBox).Text;
+
+            resultStack.Children.Clear();
+
+            foreach (var obj in data)
+            {
+                if (obj.ToLower().StartsWith(query.ToLower()))
+                {
+                    addItem(obj);
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                resultStack.Children.Add(new TextBlock() { Text = "No results found." });
+            }
         }
-        */
+
+        private void addItem(string text)
+        {
+            TextBlock block = new TextBlock();
+
+            block.Text = text;
+
+            block.Margin = new Thickness(2, 3, 2, 3);
+            block.Cursor = Cursors.Hand;
+
+            block.MouseLeftButtonUp += (sender, e) =>
+            {
+                majortx.Text = (sender as TextBlock).Text;
+            };
+
+            block.MouseEnter += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.PeachPuff;
+            };
+
+            block.MouseLeave += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.Transparent;
+            };
+
+            resultStack.MouseLeave += (sender, e) =>
+            {
+                resultStack.Visibility = Visibility.Collapsed;
+            };
+
+            majortx.MouseEnter += (sender, e) =>
+            {
+                resultStack.Visibility = Visibility.Visible;
+            };
+
+            resultStack.Children.Add(block);
+
+        }
+
+        private void coursetx_KeyUp(object sender, KeyEventArgs e)
+        {
+            bool found = false;
+            var border = (resultStack2.Parent as ScrollViewer).Parent as Border;
+            var data = Model.GetData();
+
+            string query = (sender as TextBox).Text;
+
+            resultStack2.Children.Clear();
+
+            foreach (var obj in data)
+            {
+                if (obj.ToLower().StartsWith(query.ToLower()))
+                {
+                    addItem2(obj);
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                resultStack2.Children.Add(new TextBlock() { Text = "No results found." });
+            }
+        }
+
+        private void addItem2(string text)
+        {
+            TextBlock block = new TextBlock();
+
+            block.Text = text;
+
+            block.Margin = new Thickness(2, 3, 2, 3);
+            block.Cursor = Cursors.Hand;
+
+            block.MouseLeftButtonUp += (sender, e) =>
+            {
+                coursetx.Text = (sender as TextBlock).Text;
+            };
+
+            block.MouseEnter += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.PeachPuff;
+            };
+
+            block.MouseLeave += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.Transparent;
+            };
+
+            resultStack2.MouseLeave += (sender, e) =>
+            {
+                resultStack2.Visibility = Visibility.Collapsed;
+            };
+
+            coursetx.MouseEnter += (sender, e) =>
+            {
+                resultStack2.Visibility = Visibility.Visible;
+            };
+
+            resultStack2.Children.Add(block);
+
+            string userinput = majortx.Text;
+        }
 
     }
 }

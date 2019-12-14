@@ -30,26 +30,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="coursestx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,32,43,194"/>
-                <ListBox x:Name="ListBoxCourses" Margin="286,109,286,85" Grid.RowSpan="2">
+
+                <ListBox x:Name="ListBoxCourses" Margin="265,10,307,195" Grid.RowSpan="2">
                     <Label Content="Required Courses in Current Major:" FontStyle="Italic" FontSize="14" Height="32" Width="281"/>
-                    <ListBoxItem Content = "Item 1" />
-                    <ListBoxItem Content = "Item 2" />
-                    <ListBoxItem Content = "Item 3" />
                 </ListBox>
-                <TextBox x:Name="hubtx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,70,43,156"/>
-                <ListBox x:Name="ListBoxHUB" Margin="586,109,43,86" Grid.RowSpan="2">
+                <ListBox x:Name="ListBoxHUB" Margin="592,10,37,196" Grid.RowSpan="2">
                     <Label Content="Required HUB credits:" FontStyle="Italic" FontSize="14" Height="32" Width="220"/>
-                    <ListBoxItem Content = "Item 1" />
-                    <ListBoxItem Content = "Item 2" />
-                    <ListBoxItem Content = "Item 3" />
                 </ListBox>
-                <Button x:Name="addtosem1" Content="add to current semester" Margin="699,50,43,178" Height="Auto" Background="#00FFFFFF" BorderBrush="#00FFFFFF" FontStyle="Italic" FontSize="11" Foreground="White" Click="addtosem1_Click"/>
-                <Button x:Name="addtosem2" Content="add to current semester" Margin="699,89,43,138" Height="Auto" Background="#00FFFFFF" BorderBrush="#00FFFFFF" FontStyle="Italic" FontSize="11" Foreground="White" Click="addtosem2_Click"/>
-                <TextBox x:Name="majortx" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="579,10,43,216"/>
-                <Label Content="Choose a Major:" Margin="286,6,327,212" FontStyle="Italic" FontSize="11" Foreground="White"/>
-                <Label Content="Search Courses within Major:" Margin="286,28,327,190" FontStyle="Italic" FontSize="11" Foreground="White"/>
-                <Label Content="Search Electives and HUB courses:" Margin="286,66,327,152" FontStyle="Italic" FontSize="11" Foreground="White"/>
+                <Label Content="Choose a Major:" Margin="265,54,348,163" FontStyle="Italic" FontSize="11" Foreground="White" Grid.Row="1"/>
+                <Label Content="Search Courses within Major:" Margin="559,56,54,163" FontStyle="Italic" FontSize="11" Foreground="White" Grid.Row="1"/>
 
             </Grid>
         </StackPanel>
@@ -68,7 +57,7 @@
             <Button Grid.Row="3" Content="Year 4" x:Name="Yr4" Height="Auto" Background="#FFFF8843" BorderBrush="#FFFF8843" FontSize="12" FontFamily="Arial" Foreground="White" Click="Yr4_Click"/>
         </Grid>
 
-        <Grid x:Name="y1s1grid" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Collapsed">
+        <Grid x:Name="y1s1grid" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="182" Margin="72,25,0,0" Background="White" Visibility="Visible" ShowGridLines="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -147,7 +136,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
         </Grid>
+        <StackPanel Margin="179,345,209,-345" Grid.ColumnSpan="2">
+            <TextBox Width="246" Padding="5, 3, 5, 3" KeyUp="majortx_KeyUp" Name="majortx" />
+            <Border Width="231" Height="92" BorderBrush="#00FFFFFF" BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="-8,0,-8,0" Background="White" Height="68" VerticalAlignment="Top">
+                    <StackPanel Name="resultStack"></StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+        <StackPanel Margin="464,345,-75,-345" Grid.ColumnSpan="2">
+            <TextBox Width="246" Padding="5, 3, 5, 3" KeyUp="coursetx_KeyUp" Name="coursetx" />
+            <Border Width="231" Height="69" BorderBrush="#00FFFFFF" BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="-8,0,-8,0" Background="White" Height="87" VerticalAlignment="Top">
+                    <StackPanel Name="resultStack2"></StackPanel>
+                </ScrollViewer>
+            </Border>
+            <Button x:Name="addtosem1" Content="add to current semester" Height="16" Background="#00FFFFFF" BorderBrush="#00FFFFFF" FontStyle="Italic" FontSize="11" Foreground="White" Click="addtosem1_Click" Width="126"/>
+        </StackPanel>
     </Grid>
-
 
 </Window>
