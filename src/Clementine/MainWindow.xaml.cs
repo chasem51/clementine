@@ -353,6 +353,54 @@ namespace Clementine
             string userinput = majortx.Text;
         }
 
+        private void numcourses_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string numcourse = numcourses.Text;
+
+            string course1credit = c1c.Text;
+            string course2credit = c2c.Text;
+            string course3credit = c3c.Text;
+            string course4credit = c4c.Text;
+            string course5credit = c5c.Text;
+
+            string course1letter = c1l.Text;
+            string course2letter = c2l.Text;
+            string course3letter = c3l.Text;
+            string course4letter = c4l.Text;
+            string course5letter = c5l.Text;
+
+            string[] grades = [course1letter, course2letter, course3letter, course4letter, course5letter];
+            string[] credits = [course1credit, course2credit, course3credit, course4credit, course5credit];
+
+            string gpa = DataBase.GetGPA(numcourse, grades, credits);
+
+            TextBlock tb = new TextBlock();
+            gpagrid.Children.Add(tb);
+            Grid.SetColumn(tb, 1);
+            tb.Margin = new Thickness(20);
+            tb.Inlines.Add(new Run(gpa) { FontWeight = FontWeights.Bold });
+
+        }
+
+        private void majortx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string userinput = majortx.Text;
+            var data = DataBase.ReturnMajor_courses(userinput);
+
+            ListBoxCourses.Items.Clear();
+            foreach (string item in data)
+            {
+                ListItem listItem = new ListItem(item);
+                ListBoxCourses.Items.Add(listItem);
+            }
+
+        }
+        }
+
+
+
+
+
         //Add courses from current major to ListBoxCourses
 
     }
